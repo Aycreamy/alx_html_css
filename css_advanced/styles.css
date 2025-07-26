@@ -153,22 +153,61 @@ p {
 }
 
 /* ------------------------
-   ✅ Membership Section
+   ✅ Membership Section (Updated for Figma)
 ------------------------- */
 .membership {
+    background: #6c63ff;              /* Purple brand background */
+    color: #fff;
     text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    margin: 3rem auto;
+}
+.membership h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+.membership .btn-primary {
+    background: #ff4081;
+    margin: 1rem 0 2rem;
+    display: inline-block;
 }
 .membership ul {
-    list-style: disc;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+.membership ul li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    position: relative;
     text-align: left;
-    max-width: 600px;
-    margin: 1rem auto;
-    padding-left: 1.2rem;
+    color: #fff;
+}
+/* Optional: checkmark icon */
+.membership ul li::before {
+    content: "✔";
+    color: #ffdd57;
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }
 .membership img {
-    margin-top: 1rem;
+    margin-top: 2rem;
     max-width: 400px;
     border-radius: 10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 /* ------------------------
