@@ -153,10 +153,10 @@ p {
 }
 
 /* ------------------------
-   ✅ Membership Section (Updated for Figma)
+   ✅ Membership Section (Figma-aligned)
 ------------------------- */
 .membership {
-    background: #6c63ff;              /* Purple brand background */
+    background: #6c63ff;
     color: #fff;
     text-align: center;
     padding: 4rem 2rem;
@@ -172,7 +172,6 @@ p {
 .membership .btn-primary {
     background: #ff4081;
     margin: 1rem 0 2rem;
-    display: inline-block;
 }
 .membership ul {
     display: grid;
@@ -185,7 +184,7 @@ p {
 }
 .membership ul li {
     background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 400;
@@ -194,7 +193,6 @@ p {
     text-align: left;
     color: #fff;
 }
-/* Optional: checkmark icon */
 .membership ul li::before {
     content: "✔";
     color: #ffdd57;
@@ -211,20 +209,52 @@ p {
 }
 
 /* ------------------------
-   ✅ FAQ Section
+   ✅ FAQ Section (Updated per Figma)
 ------------------------- */
 .faq {
-    background: #fafafa;
+    background: #fff;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.faq h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #333;
 }
 .faq-item {
-    max-width: 800px;
-    margin: 1rem auto;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 1rem;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease;
+}
+.faq-item:hover {
+    background: #f0f0ff;
 }
 .faq-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+.faq-item h3::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #6c63ff;
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+}
+.faq-item p {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    color: #555;
 }
 
 /* ------------------------
@@ -277,14 +307,41 @@ p {
 }
 
 /* ------------------------
-   ✅ Footer
+   ✅ Footer (Updated per Figma)
 ------------------------- */
 .footer {
-    background: #333;
-    color: #fff;
+    background: #222;
+    color: #ccc;
     text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
+    padding: 2rem 1rem;
+    font-size: 0.95rem;
+    margin-top: 3rem;
+    border-top: 1px solid #444;
+}
+.footer p {
+    margin: 0.5rem 0;
+}
+.footer a {
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.footer a:hover {
+    color: #ff4081;
+}
+.footer .social-icons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.footer .social-icons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+.footer .social-icons img:hover {
+    transform: scale(1.2);
 }
 
 /* ------------------------
