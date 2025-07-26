@@ -1,4 +1,6 @@
-/* ✅ Global Styles */
+/* ------------------------
+   ✅ Global Styles
+------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -12,61 +14,27 @@ body {
     background: #fff;
 }
 
-/* ✅ Header */
-.header {
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 2rem;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* ------------------------
+   ✅ Reusable Elements
+------------------------- */
+section {
+    padding: 3rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #6c63ff;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #333;
-}
-
-.nav-links a:hover {
-    color: #6c63ff;
-}
-
-/* ✅ Hero Section */
-.hero {
-    background: #6c63ff;
-    color: #fff;
-    text-align: center;
-    padding: 5rem 2rem;
-}
-
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
+h2 {
+    font-size: 2rem;
     margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
 }
 
+p {
+    font-size: 1rem;
+}
+
+/* Buttons */
 .btn-primary {
     background: #ff4081;
     color: #fff;
@@ -75,88 +43,121 @@ body {
     font-weight: bold;
     border-radius: 5px;
     transition: background 0.3s ease;
+    display: inline-block;
 }
-
 .btn-primary:hover {
     background: #ff1c68;
 }
 
-/* ✅ Learn From the Pros */
-.pros {
-    padding: 3rem 2rem;
-    text-align: center;
-}
-
-.pros h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-.pro-list {
+/* Card Containers */
+.card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+/* ------------------------
+   ✅ Header & Navigation
+------------------------- */
+.header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 2rem;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
-
-.pro-card {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: #fafafa;
+.logo img {
+    height: 50px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+}
+.nav-links a:hover {
+    color: #6c63ff;
 }
 
+/* ------------------------
+   ✅ Hero Section
+------------------------- */
+.hero {
+    background: #6c63ff;
+    color: #fff;
+    text-align: center;
+    padding: 5rem 2rem;
+}
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.hero img {
+    margin-top: 2rem;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* ------------------------
+   ✅ Learn From The Pros
+------------------------- */
+.pros .pro-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+.pro-card {
+    text-align: center;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+}
 .pro-card img {
-    width: 100%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 50%;
     margin-bottom: 1rem;
 }
 
-/* ✅ Tutorials */
+/* ------------------------
+   ✅ Tutorials Section
+------------------------- */
 .tutorials {
     background: #f9f9f9;
-    padding: 3rem 2rem;
 }
-
-.tutorials h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-.tutorial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.tutorial-card {
-    background: #fff;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    padding: 1rem;
-}
-
 .tutorial-card img {
     width: 100%;
     border-radius: 8px 8px 0 0;
     margin-bottom: 1rem;
 }
 
-/* ✅ Membership Section */
+/* ------------------------
+   ✅ Membership Section
+------------------------- */
 .membership {
     text-align: center;
-    padding: 3rem 2rem;
 }
-
-.membership h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
 .membership ul {
     list-style: disc;
     text-align: left;
@@ -164,40 +165,81 @@ body {
     margin: 1rem auto;
     padding-left: 1.2rem;
 }
+.membership img {
+    margin-top: 1rem;
+    max-width: 400px;
+    border-radius: 10px;
+}
 
-/* ✅ FAQ */
+/* ------------------------
+   ✅ FAQ Section
+------------------------- */
 .faq {
-    padding: 3rem 2rem;
     background: #fafafa;
 }
-
-.faq h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
 .faq-item {
     max-width: 800px;
     margin: 1rem auto;
     border-bottom: 1px solid #ddd;
     padding-bottom: 1rem;
 }
+.faq-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
 
-/* ✅ Testimonial */
+/* ------------------------
+   ✅ Testimonial Section (Quote)
+------------------------- */
 .testimonial {
+    background: #f5f5ff;
+    color: #333;
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    margin: 3rem auto;
+}
+.testimonial blockquote {
+    font-size: 1.5rem;
     font-style: italic;
-    background: #6c63ff;
-    color: #fff;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    position: relative;
 }
-
+.testimonial blockquote::before,
+.testimonial blockquote::after {
+    color: #6c63ff;
+    font-size: 3rem;
+    position: absolute;
+}
+.testimonial blockquote::before {
+    content: "“";
+    left: -15px;
+    top: -15px;
+}
+.testimonial blockquote::after {
+    content: "”";
+    right: -15px;
+    bottom: -15px;
+}
 .testimonial p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+}
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     margin-top: 1rem;
-    font-weight: bold;
+    border: 3px solid #6c63ff;
 }
 
-/* ✅ Footer */
+/* ------------------------
+   ✅ Footer
+------------------------- */
 .footer {
     background: #333;
     color: #fff;
@@ -206,7 +248,9 @@ body {
     font-size: 0.9rem;
 }
 
-/* ✅ Responsive Adjustments */
+/* ------------------------
+   ✅ Responsive Design
+------------------------- */
 @media (max-width: 768px) {
     .hero h2 {
         font-size: 2rem;
