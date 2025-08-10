@@ -1,0 +1,279 @@
+/* 6-styles.css
+   CSS pentagons for "Our results" — no images used.
+   Keep selectors generic and simple.
+*/
+
+/* ---------------------------
+   Reset & base
+   --------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --primary: #FF6565;
+  --bg: #0b0b0b;
+  --text: #111;
+  --muted: #6b6b6b;
+  --max-width: 1000px;
+  --font-family: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --p-color: var(--primary);
+}
+
+html,body { height:100%; }
+body{
+  font-family: var(--font-family);
+  color: var(--text);
+  background: linear-gradient(180deg,#0b0b0b 0%, #0f0f10 60%) fixed;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* ---------------------------
+   Container
+   --------------------------- */
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------------------------
+   Header
+   --------------------------- */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: transparent;
+  padding: 18px 0;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-weight:700;
+  color: #fff;
+  letter-spacing: .06em;
+  text-transform: lowercase;
+}
+.nav-links{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  opacity:.95;
+  transition: color .2s ease;
+}
+.nav-links a:hover,
+.nav-links a:active{
+  color: var(--primary);
+}
+
+/* ---------------------------
+   Hero
+   --------------------------- */
+.hero{
+  min-height: 58vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding: 60px 0;
+  background: linear-gradient(135deg, rgba(255,101,101,0.12), rgba(108,92,231,0.08));
+  color: #fff;
+}
+.hero-inner { max-width: 720px; }
+
+.hero-title{
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  margin-bottom: 12px;
+  color: #fff;
+}
+.hero-sub{
+  margin-bottom: 20px;
+  color: rgba(255,255,255,0.85);
+}
+.btn{
+  display:inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight:700;
+  transition: opacity .18s ease, transform .12s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover, .btn:active { opacity: 0.9; transform: translateY(-1px); }
+
+/* ---------------------------
+   What we do
+   --------------------------- */
+.what-we-do{
+  background: #fff;
+  padding: 60px 0;
+  color: var(--text);
+}
+.what-we-do h2{ font-size:1.6rem; margin-bottom:8px; text-align:center; }
+.what-we-do .lead{ max-width:720px; margin:0 auto 28px; color:var(--muted); text-align:center; }
+.services{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:18px;
+}
+.service{
+  background: #fff;
+  flex: 1 1 200px;
+  max-width: 240px;
+  padding:18px;
+  text-align:center;
+  border-radius:8px;
+}
+.service-icon{ font-size:28px; margin-bottom:12px; }
+.service h3{ margin-bottom:8px; font-size:1rem; }
+.service p{ color:var(--muted); font-size:.95rem; }
+
+/* ---------------------------
+   Our results — CSS pentagons
+   --------------------------- */
+.our-results{
+  padding: 60px 0;
+  background: linear-gradient(180deg, #f7f7fb 0%, #ffffff 100%);
+  text-align:center;
+}
+.our-results h2{ font-size:1.6rem; margin-bottom:6px; }
+.our-results .lead{ max-width:700px; margin:0 auto 30px; color:var(--muted); }
+
+.results-grid{
+  display:flex;
+  gap:28px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+/* result card wrapper (keeps things flexible) */
+.result-card{
+  flex: 1 1 160px;
+  max-width:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px;
+}
+
+/* Pentagon: made with clip-path. --p-color var lets us change each one easily */
+.pentagon{
+  --p-color: var(--p-color, #FF6565);
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--p-color) 85%, white 15%), var(--p-color));
+  clip-path: polygon(50% 0%, 95% 35%, 78% 90%, 22% 90%, 5% 35%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+  box-shadow: 0 6px 18px rgba(12,12,12,0.12), inset 0 -6px 18px rgba(255,255,255,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* small hover effect */
+.pentagon:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 30px rgba(12,12,12,0.18);
+}
+
+/* inner container to align the text inside pentagon */
+.pentagon-inner{
+  text-align:center;
+  color: #fff;
+  padding: 6px 10px;
+}
+.pentagon .value{
+  font-size:1.4rem;
+  font-weight:800;
+  line-height:1;
+  margin-bottom:6px;
+}
+.pentagon .label{
+  font-size:0.85rem;
+  opacity:0.95;
+}
+
+/* ---------------------------
+   Contact
+   --------------------------- */
+.contact-us{
+  padding: 54px 0;
+  background: #fff;
+  color:var(--text);
+}
+.contact-us h2{ font-size:1.4rem; margin-bottom:6px; text-align:center; }
+.contact-us .lead{ color:var(--muted); max-width:680px; margin:0 auto 20px; text-align:center; }
+
+.contact-form{ max-width:680px; margin: 0 auto; }
+.form-row{ display:flex; gap:12px; margin-bottom:12px; flex-wrap:wrap; }
+.contact-form input, .contact-form textarea{
+  flex:1 1 280px;
+  padding:12px;
+  border-radius:6px;
+  border:1px solid #e5e5e5;
+  font:inherit;
+  outline:none;
+}
+.contact-form textarea{ min-height:120px; resize:vertical; }
+.contact-form input:focus, .contact-form textarea:focus{
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(255,101,101,0.06);
+}
+.contact-form .btn{ width:160px; }
+
+/* ---------------------------
+   Footer
+   --------------------------- */
+.footer{
+  padding:20px 0 30px;
+  background: #0b0b0b;
+  color:#ccc;
+}
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.footer a{ color: #ccc; text-decoration:none; margin-left:12px; }
+.footer a:hover{ color: var(--primary); }
+.footer-copy{ text-align:center; margin-top:14px; color:#777; }
+
+/* ---------------------------
+   Responsive small screens
+   --------------------------- */
+@media (max-width: 480px){
+  .header-inner{ gap: 12px; }
+  .nav-links{ display:none; } /* keep it simple for the exercise; mobile nav could be expanded later */
+
+  .hero{ padding:40px 0; min-height:48vh; }
+  .hero-title{ font-size:1.6rem; }
+
+  .services{ flex-direction:column; align-items:center; }
+  .service{ max-width:320px; width:100%; }
+
+  .results-grid{ flex-direction:column; align-items:center; gap:18px; }
+  .result-card{ max-width:220px; }
+
+  .contact-form .btn{ width:100%; }
+}
+
+/* small polish for medium screens */
+@media (min-width:481px) and (max-width:900px){
+  .results-grid{ gap:18px; }
+}

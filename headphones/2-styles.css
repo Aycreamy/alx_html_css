@@ -1,0 +1,60 @@
+/* OUR RESULTS SECTION */
+.our-results {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f5f5f5;
+    color: black;
+}
+
+.our-results h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.our-results p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.results-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.result {
+    flex: 1 1 200px;
+    max-width: 200px;
+}
+
+.pentagon {
+    background: url('pentagone.png') no-repeat center center/contain;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.pentagon h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.pentagon p {
+    font-size: 0.9rem;
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+    .results-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
